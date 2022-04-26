@@ -1297,6 +1297,10 @@ body {
     line-height: 27px;
 }
 
+.good-tag-red {
+    background-color: #e14949;
+}
+
 .good-tag {
     position: absolute;
     right: 0;
@@ -1811,7 +1815,6 @@ body {
     height: 140px;
     margin: 0 auto;
 
-    /* background-color: rgba(0, 0, 0, 0.1); */
     overflow: hidden;
 }
 
@@ -2027,6 +2030,9 @@ body {
     display: block;
 }
 
+.good-tag-red {
+    background-color: #e14949;
+}
 
 /* 브랜드관 */
 .brand {

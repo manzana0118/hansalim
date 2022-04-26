@@ -246,6 +246,91 @@ window.onload = function(){
         }
     });
 
+
+    // popular의 출력을 위한 데이터
+
+    // 카테고리별 데이터
+    let data_arr = [];
+    // 타이틀 데이터 
+    let data_title = [];
+
+    // HTTP Request: 서버에 자료를 요청하는 것
+    // HTTP Response: 서버에서 응답 오는 것
+    fetch('/hansalim/data.json')
+    .then(res => res.json())
+    .then(result => {
+        for(let i = 0; i < result.length; i++) {
+            let data = result[i];
+            data_title[i] = data.title;
+            data_arr[i] = data.arr;
+        }  
+        // 비동기로 데이터를 가져오기 때문에 정리가 끝나면 목록 출력
+        p_change(data_arr[0]);
+        $('.section-bt').text(`${data_title[0]} 더보기`);
+    });
+
+    // Popular 버튼 클릭시 실행
+    let p_tab = $('.sw-popular .swiper-slide a');
+    // 내용이 나올 장소
+    let p_bottom = $('.popular-bottom')
+
+    function p_change(_arr) {
+        // 최종 a 태그 html을 저장하는 용도
+        let temp = '';
+        for(let i = 0; i < _arr.length; i++) {
+            // 배열 안에 있는 데이터를 1개씩 꺼내서 참조한다.
+            let data = _arr[i];
+
+            temp += 
+            `<a href="${data.link}" class="good-link">
+                <span class="good-img">
+                    <img src="images/${data.img}" alt="제품">
+                </span>
+                <div class="good-info">`;
+                    // data에 cate가 있으면 처리하겠다.
+                    if(data.cate != '') {
+                        temp += 
+                        `<span class="good-cate">
+                            <em class="good-cate-txt">${data.cate}</em>
+                        </span>`;
+                    }
+                    temp += 
+                    `<span class="good-title">
+                        ${data.title}
+                    </span>
+                    <span class="good-price">
+                        <b>${data.price}</b>원
+                    </span>
+                </div>`
+
+                // data.type에 따라서 모양이 달라져야 한다.
+                if (data.type == 0) {
+
+                }else if(data.type == 1) {
+                    temp += `<span class="good-tag">${data.tag}</span>`
+                }else if(data.type == 2) {
+                    temp += `<span class="good-tag good-tag-red">${data.tag}</span>`
+                }       
+                    temp +=`<button class="good-cart"></button>
+            </a>`;
+            
+        }
+        p_bottom.html(temp);
+        p_bottom.find('a:first-child').css('margin-left', 0);
+    };
+
+    $.each(p_tab, function(index, item) {
+        $(this).click(function(event) {
+            event.preventDefault();
+            p_change(data_arr[index]);
+            p_tab.removeClass('popular-bt-focus');
+            p_tab.eq(index).addClass('popular-bt-focus');
+            
+            let temp = data_title[index];
+            $('.section-bt').text(`${temp} 더보기`);
+        });
+    });
+
     // 인기상품 슬라이드
     new Swiper('.sw-popular', {
         slidesPerView: 7,
