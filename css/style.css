@@ -1,0 +1,3254 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    border: 0px;
+    vertical-align: middle;
+}
+
+html {
+    font-size: 10px;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Roboto', 'Noto Sans KR','Malgun Gothinc', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000;
+    word-break: break-all;
+}
+
+/* 공통 요소 */
+.clearfix::after {
+    content: '';
+    position: relative;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.container {
+    position: relative;
+    display: block;
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.wrap {
+    position: relative;
+    display: block;
+}
+
+.section-title {
+    position: relative;
+    display: block;
+    padding-bottom: 24px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 95px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #707070;
+}
+
+.section-title h2 {
+    position: relative;
+    display: block;
+
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.8;
+}
+
+.section-title b {
+    position: relative;
+    display: block;
+    font-weight: 700;
+}
+
+.section-desc {
+    position: relative;
+    display: block;
+    font-size: 15px;
+    line-height: 24px;
+
+    margin-top: 18px;
+}
+
+.section-bt {
+    position: relative;
+    display: block;
+    width: 112px;
+    height: 32px;
+    
+    font-size: 13px;
+    color: #666;
+    line-height: 32px;
+    text-align: center;
+
+    background-color: #fff;
+    border: 1px solid #bbb;
+
+    margin-top: 25px;
+
+    transition: background-color 0.3s;
+}
+
+.section-bt:hover {
+    background-color: #f8f8f8;
+}
+
+.no-ml {
+    margin-left: 0 !important;
+}
+
+.no-mb {
+    margin-bottom: 0 !important;
+}
+
+/* 모달창 */
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 99999;
+}
+
+.modal-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    display: block;
+    width: 400px;
+    height: 250px;
+
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.modal-wrap h2 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 95px;
+    font-family: 'Noto Sans KR';
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.1;
+    color: #000;
+
+    white-space: nowrap;
+    text-align: center;
+}
+
+.modal-wrap .modal-desc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 155px;
+    font-family: 'Noto Sans KR';
+    font-size: 16px;
+    color: #666;
+
+    white-space: nowrap;
+    text-align: center;
+}
+
+.fa-exclamation-triangle {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.modal-close {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    display: block;
+    width: 150px;
+    height: 30px;
+
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.modal-bt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100px;
+    height: 40px;
+
+    border: 0;
+
+    color: #fff;
+    background-color: #000;
+
+    z-index: 1000;
+}
+
+/* 고정메뉴 */
+.fixmenu {
+    position: fixed;
+    left: calc(50% + 650px);
+    top: 175px;
+
+    display: block;
+    width: 85px;
+
+    background-color: #fff;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 4px 9px 0 rgb(0 0 0 / 10%);
+
+    z-index: 99;
+    border-radius: 20px;
+
+    /* padding: 20px 0; */
+    padding-top: 20px;
+    padding-bottom: 30px;
+
+    text-align: center;
+}
+
+.fixmenu-list {
+    position: relative;
+    display: block;
+}
+.fixmenu-list li {
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.fixmenu-list a {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.325px;
+}
+.fixmenu-list i {
+    position: relative;
+    display: block;
+    width: 36px;
+    height: 32px;
+    background: url('../images/icoFloating.png') no-repeat;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.fixmenu-list .fixicon-1 {
+    background-position: 0px 0px;
+}
+.fixmenu-list .fixicon-2 {
+    background-position: 0px -32px;
+}
+.fixmenu-list .fixicon-3 {
+    background-position: 0px -64px;
+}
+.fixmenu-list .fixicon-4 {
+    background-position: 0px -96px;
+}
+
+.fixmenu-list img {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.gotop {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 30px;
+    
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 11px;
+    border: 0;
+    border-radius: 0 0 20px 20px;
+    cursor: pointer;
+    
+    background-color: #000;
+}
+
+
+/* 상단 영역 */
+.header {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    z-index: 999;
+
+    background-color: #fff; 
+}
+
+.header-top {
+    position: relative;
+    display: block;
+    height: 68px;
+    z-index: 99;
+}
+
+/* .header-top-active {
+    display: none;
+} */
+
+.header-top .container {
+    height: 100%;
+    padding-top: 23px;
+    padding-bottom: 17px;
+}
+
+.logo {
+    position: relative;
+    display: block;
+    width: 190px;
+    height: 31px;
+
+    background: url('../images/logo.png') no-repeat center;
+    margin-top: 6px;
+    margin-left: -1px;
+}
+
+.day {
+    position: relative;
+    display: block;
+    width: 56px;
+    height: 16px;
+
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.325px;
+    color: #666;
+
+    margin-left: 209px;
+    margin-top: -27px;
+    white-space: nowrap;
+}
+
+.day i {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+
+    background: url('../images/icoLocation.png') no-repeat center;
+    margin-right: 6px;
+}
+
+.mymenu {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    display: block;
+}
+
+.mymenu > li {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 0 11px;
+}
+
+.mymenu > li:first-child {
+    padding-left: 0;
+}
+
+.mymenu > li:last-child {
+    padding-right: 0;
+}
+
+.mymenu > li::before {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    display: block;
+    width: 1px;
+    height: 8px;
+
+    background-color: #bbbbbb;
+}
+
+.mymenu > li:last-child::before {
+    content: none;
+}
+
+.mymenu > li a {
+    font-size: 13px;
+    line-height: 13px;
+    color: #666;
+}
+
+#mymenu-center::after {
+    content: '';
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+
+    background: url('../images/icognbdown.png') no-repeat center;
+    margin-left: 5px;
+    vertical-align: 2px;
+}
+
+.header-main {
+    position: relative;
+    display: block;
+    height: 63px;
+    /* z-index: 999; */
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header-main .container {
+    height: 100%;
+}
+
+.header-main-active {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    background-color: #fff;
+}
+
+.header-main-left {
+    position: relative;
+    display: block;
+    float: left;
+    
+    padding-top: 18px;
+    /* padding-bottom: 15px; */
+}
+
+/* 전체 메뉴 */
+.all-menu {
+    position: absolute;
+    left: 0;
+    top: 62px;
+
+    display: block;
+    width: 210px;
+    height: 0px;
+
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+
+    overflow: hidden;
+    visibility: hidden;
+
+    transition: width 0.3s;
+}
+
+.all-menu-active {
+    width: 420px !important;
+}
+
+.all-menu-detail {
+    position: absolute;
+    left: 210px;
+    top: 0;
+    display: block;
+    width: 210px;
+    height: 100%;
+    background-color: #f9f9f9;
+}
+
+.all-menu-detail-list {
+    position: relative;
+    display: block;
+    padding: 10px 0;
+}
+
+.all-menu-detail-list li {
+    position: relative;
+    display: block;
+
+    line-height: 40px;
+    padding: 0 20px;
+}
+
+.all-menu-detail-list li a {
+    position: relative;
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: 400;
+    color: #000;
+}
+
+.all-menu-detail-list li a:hover {
+    font-weight: 500;
+    color: #76bd42;
+}
+
+.all-menu-detail-list li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 1px;
+    background: #76bd42;
+}
+
+.all-menu-wrap {
+    position: relative;
+    display: block;
+    width: 210px;
+    height: 100%;
+    overflow: hidden;
+
+    background-color: #fff;
+    z-index: 1;
+}
+
+.all-list-cate {
+    position: relative;
+    display: block;
+}
+
+.all-list-cate li {
+    position: relative;
+    display: block;
+
+    padding: 0 20px;
+}
+
+.all-list-cate li:hover {
+    background-color: #f8f8f8;
+}
+
+.all-list-cate li a {
+    position: relative;
+    display: block;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.375px;
+    color: #000;
+}
+
+.all-list-cate li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 6px;
+    height: 10px;
+
+    background: url('../images/icoGnbArr1.png') no-repeat;
+    background-position: 0px 0px;
+    opacity: 0;
+}
+
+.all-list-cate li a:hover {
+    color: #76bd42;
+}
+
+.all-list-cate li a:hover::after {
+    background-position: 0px -10px;
+    opacity: 1;
+}
+
+.all-list-theme {
+    position: relative;
+    display: block;
+}
+
+.all-list-theme li {
+    position: relative;
+    display: block;
+
+    padding: 0 20px;
+}
+
+.all-list-theme li a span {
+    position: relative;
+    display: inline-block;
+}
+
+.all-list-theme li a span::after {
+    content: '';
+    position: absolute;
+    top: 9px;
+    right: -9px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #f58320;
+    border-radius: 50%;
+}
+
+.all-list-theme li:first-child a {
+    border-top: 1px solid #666;
+}
+
+.all-list-theme li:last-child a {
+    border-bottom: 1px solid #666;
+}
+
+.all-list-theme li a {
+    position: relative;
+    display: block;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.375px;
+
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.all-list-theme li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 6px;
+    height: 10px;
+
+    background: url('../images/icoGnbArr1.png') no-repeat;
+    background-position: 0px 0px;
+    opacity: 0;
+}
+
+.all-list-theme li a:hover {
+    color: #76bd42;
+}
+
+.all-list-theme li a:hover::after {
+    background-position: 0px -10px;
+    opacity: 1;
+}
+
+.all-list-service {
+    position: relative;
+    display: block;
+}
+
+.all-list-service li {
+    position: relative;
+    display: block;
+
+    padding: 3px 20px;
+}
+
+.all-list-service li:first-child {
+    margin-top: 5px;
+}
+
+.all-list-service li:last-child {
+    margin-bottom: 5px;
+}
+
+.all-list-service li a {
+    position: relative;
+    display: block;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -0.375px;
+    color: #666;
+}
+
+.all-list-service li a::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 6px;
+    height: 10px;
+
+    background: url('../images/icoGnbArr1.png') no-repeat;
+    background-position: 0px 0px;
+    opacity: 0;
+}
+
+.all-list-service li a:hover {
+    color: #76bd42;
+}
+
+.all-list-service li a:hover::after {
+    background-position: 0px -10px;
+    opacity: 1;
+}
+
+#all {
+    position: relative;
+    display: block;
+    float: left;
+    
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #000;
+    /* 영역을 겹치기 위한 처리 */
+    padding-bottom: 17px;
+}
+
+#all img {
+    vertical-align: -3px;
+    margin-right: 10px;
+}
+
+.nav {
+    position: relative;
+    display: block;
+    float: left;
+
+    padding-left: 13px;
+}
+
+.gnb > li {
+    position: relative;
+    display: block;
+    float: left;
+
+    padding: 0px 15px;
+}
+
+.gnb > li > a {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 28px;
+
+    color: #000;
+}
+
+.gnb > li > a:hover {
+    color: #76bd42;
+}
+
+.gnb > li:first-child  {
+    margin-left: 0px;
+}
+
+.gnb > li:last-child  {
+    margin-right: 0px;
+}
+
+.gnb > li:nth-child(5)::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #f58320;
+    border-radius: 50%;
+}
+
+.gnb > li:nth-child(6)::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 7px;
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #f58320;
+    border-radius: 50%;
+}
+
+#arrow i {
+    position: relative;
+    display: inline-block;
+    width: 11px;
+    height: 8px;
+
+    background: url('../images/icoGnbArr2.png') no-repeat center;
+    background-position: 0px 0px;
+
+    margin-left: 3px;
+    vertical-align: 2px;
+}
+
+.arrow-list-event-active {
+    color: #76bd42 !important;
+}
+
+.arrow-list-event-active i {
+    background-position: 0px -8px !important;
+}
+
+.arrow-list {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 43px;
+    display: none;
+
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+    padding: 5px 20px;
+}
+
+.arrow-list-more {
+    left: 69% !important;
+}
+
+.arrow-list li {
+    position: relative;
+    display: block;
+}
+
+.arrow-list li a {
+    position: relative;
+    display: inline-block;
+
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 35px;
+    color: #666;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.arrow-list li a:hover {
+    font-weight: 500;
+    color: #000;
+}
+
+.arrow-list li a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+}
+
+.arrow-list-login {
+    z-index: 9999 !important;
+    top: 26px !important;
+
+    padding: 10px 20px 20px 20px !important; 
+}
+
+.arrow-list-login a {
+    font-size: 13px !important;
+    line-height: 30px !important;
+}
+
+#more {
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400;
+    color: #666;
+    padding-right: 15px;
+    margin-left: 45px;
+    margin-top: 5px;
+}
+
+#more i {
+    position: relative;
+    display: inline-block;
+    width: 10px;
+    height: 6px;
+    background: url('../images/icoGnbArr3.png') no-repeat center;
+    background-position: 0px 0px;
+    vertical-align: 2px;
+    margin-left: 3px;
+}
+
+.arrow-list-more-active{
+    color: #76bd42 !important;
+}
+
+.arrow-list-more-active i{
+    background-position: 0px -7px !important;
+}
+
+.more-div {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.header-main-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.search {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 42px;
+}
+
+.good-name {
+    position: relative;
+    top: 9px;
+    display: block;
+    line-height: 42px;
+    border: 1px solid #f7f7f7;   
+    width: 100%;
+
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', sans-serif;    
+    font-size: 13px;
+    color: #000;
+    font-weight: 400;
+
+    
+    background-color: #f7f7f7;
+    border-radius: 21px;
+    padding: 0 20px;
+    padding-right: 30px;
+}
+
+.good-name::placeholder {
+    color: #bebebe;
+}
+
+.good-name:focus {
+    border:1px solid #76bd42;
+    background: #fff;
+}
+
+.search-bt {
+    position: absolute;
+    right: 15px;
+    top: 74%;
+    transform: translateY(-50%);
+    display: block;
+}
+
+.bucket {
+    position: absolute;
+    right: -46px;
+    top: 73%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    font-size: 0;
+
+    background: url('../images/btnCart.png') no-repeat;
+}
+
+.bucket em {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    display: block;
+    padding: 4px 5px 3px 5px;
+    
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: #fff;
+    
+    border-radius: 9px;
+    background: #76bd42;
+}
+
+
+/* 메인 영역 */
+.contents {
+    position: relative;
+    display: block;
+}
+
+/* 메인 비주얼 */
+.visual {
+    position: relative;
+    display: block;
+    height: 410px;
+
+    /* background: url('../images/swiper_img_01.jpg') no-repeat center; */
+    /* margin-top: 131px; */
+}
+
+.swiper-continer {
+    width: 100%;
+    height: 100%;
+}
+
+.sw-visual .swiper-wrapper .swiper-slide a {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.sw-visual-prev {
+    position: absolute;
+    left: calc(50% - 580px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: block;
+    width: 64px;
+    height: 64px;
+
+    border: 0px;
+
+    background: url('../images/visualArrP.png') no-repeat center;
+    background-position: 0px -64px;
+
+    z-index: 99;
+    cursor: pointer;
+}
+
+.sw-visual-prev:hover {
+    background-position: 0px 0px;
+}
+
+.sw-visual-prev:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.sw-visual-next {
+    position: absolute;
+    right: calc(50% - 580px);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: block;
+    width: 64px;
+    height: 64px;
+
+    border: 0px;
+
+    background: url('../images/visualArrN.png') no-repeat center;
+    background-position: 0px -64px;
+
+    z-index: 99;
+    cursor: pointer;
+}
+
+.sw-visual-next:hover {
+    background-position: 0px 0px;
+}
+
+.sw-visual-next:hover::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    display: block;
+    width: 64px;
+    height: 64px;
+
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.sw-visual-control {
+    position: absolute;
+    left: calc(50% - 530px);
+    bottom: 43px;
+
+    display: block;
+
+    z-index: 99;
+}
+
+.sw-visual-pause {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 30px;
+    float: left;
+
+    border: 0;
+    background: url('../images/visualPlay.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+
+    margin-right: 6px;
+}
+
+.sw-visual-pause-active {
+    background-position: 0px -30px;
+}
+
+.sw-visual-pg {
+    position: relative;
+    display: block;
+    width: 52px;
+    height: 30px;
+    float: left;
+
+    padding-left: 2px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 30px;
+    letter-spacing: -1.35px;
+
+    background: url('../images/visualNum.png') no-repeat;
+    margin-right: 3px;
+}
+
+.sw-visual .swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.sw-visual-bt {
+    position: relative;
+    display: block;
+    width: 29px;
+    height: 30px;
+    float: left;
+
+    border: 0;
+    background: url('../images/visualMore.png') no-repeat;
+    cursor: pointer;
+}
+
+/* 상품 추천 */
+.recommend {
+    position: relative;
+    display: block;
+}
+
+.recommend .container{
+    padding: 85px 0px;
+}
+
+.recommend .container h2 {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 35px;
+}
+
+.good-wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.good-link {
+    position: relative;
+    display: block;
+    width: 288px;
+    height: 370px;
+    float: left;
+    margin: 0 8px;
+
+    background-color: #fff;
+    margin-bottom: 70px;
+}
+
+.good-link:first-child {
+    margin-left: 0;
+}
+
+.good-link:last-child {
+    margin-right: 0;
+}
+
+.good-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 288px;
+    overflow: hidden;
+}
+
+.good-img > img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(1.0);
+    transition: transform 0.5s;
+}
+
+.good-img:hover > img {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.good-info {
+    position: relative;
+    display: block;
+    margin-top: 13px;
+}
+
+.good-cate {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.good-cate-txt {
+    position: relative;
+    display: block;
+    float: left;
+
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 17px;
+    color: #888;
+    
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    padding: 0 7px;
+    white-space: nowrap;
+
+    margin-bottom: 13px;
+}
+
+/* dotdotdot.js 적용 검토 */
+.good-title {
+    position: relative;
+    display: block;
+    height: 44px;
+    
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.025em;
+    color: #000;
+    overflow: hidden;
+    
+    text-decoration: none;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+
+.good-price {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0;
+
+}
+.good-price b {   
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+}
+
+.good-tag {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    background: #76bd42;
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+    color: #fff;
+}
+
+.good-tag-red {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+    background: #e14949;
+    display: block;
+    width: 50px;
+    height: 50px;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 50px;
+    color: #fff;
+}
+
+.good-cart {
+    position: absolute;
+    right: 20px;
+    bottom: 0;
+    
+    display: block;
+    width: 30px;
+    height: 30px;
+    
+    background: url('../images/btnCartList.png') no-repeat;
+    background-position: 0px 0px;
+    border: none;
+
+    cursor: pointer;
+}
+
+.good-cart:hover {
+    background-position: 0px -30px;
+}
+
+
+/* 알뜰 물품 */
+.sale {
+    position: relative;
+    display: block;
+    background-color: #edf9f9;
+}
+
+.sale .container {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.sale-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-sale-control {
+    position: absolute;
+    left: 0;
+    top: 360px;
+    display: block;
+}
+
+.sw-sale-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-sale-prev:hover {
+    background-position: 0px -20px;
+}
+
+.sw-sale-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: -1.5px;
+    color: #bbb;
+}
+
+.sw-sale-next {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-sale-next:hover {
+    background-position: 0px -20px;
+} 
+
+.sale-left .swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.sale-left .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.sale-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    height: 410px;
+    float: right;
+
+    overflow: hidden;
+}
+
+.sale-right .good-link {
+    padding-bottom: 45px;
+    margin-left: 0 !important;
+    margin: 0 auto !important;
+}
+
+.sale-right .good-link .good-info {
+    padding: 0 13px;
+}
+
+.sale-right .good-cart {
+    right: 19px;
+    bottom: 45px;
+}
+
+/* 새상품 */
+.new {
+    position: relative;
+    display: block;
+    background-color: #fff;
+}
+
+.new .container {
+    padding: 80px 0;
+}
+
+.new-title {
+    position: relative;
+    display: block;
+}
+
+.new-title h2 {
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    color: #000;
+}
+
+.new-title h2 > b {
+    font-weight: 700;
+}
+
+.section-bt2 {
+    position: absolute;
+    right: 0;
+    top: 110px;
+    display: block;
+    width: 100px;
+    font-size: 13px;
+    color: #666;
+    line-height: 32px;
+    text-align: center;
+
+    background-color: #fff;
+    border: 1px solid #bbb;
+
+    margin-top: 0px;
+    transition: background-color 0.3s;
+}
+
+.section-bt:hover {
+    background-color: #f8f8f8;
+}
+
+.new-main {
+    position: relative;
+    display: block;
+    height: 500px;
+
+    margin-top: 33px;
+    padding-bottom: 50px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+/* 새물품 왼쪽 */
+.new-main-left {
+    position: relative;
+    display: block;
+    width: 590px;
+    float: left;
+
+    /* padding-right: 17px; */
+}
+
+.new-img-big {
+    position: relative;
+    display: block;
+}
+
+.new-img-big img {
+    margin-bottom: 15px;
+}
+
+.new-img-big h2 {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 37px;
+    color: #000;
+    letter-spacing: -0.625px;
+}
+
+.new-img-big p {
+    margin-top: 3px;
+}
+/* //새물품 왼쪽 */
+
+/* 새물품 오른쪽 */
+.new-main-right {
+    position: relative;
+    display: block;
+    float: right;
+    width: calc(100% - 590px);
+}
+
+.new-img-small {
+    position: relative;
+    display: block;
+    width: 288px;
+    float: left;
+
+    margin-left: 17px;
+    margin-bottom: 17px;
+}
+
+.n-img-small {
+    position: relative;
+    display: block;
+    width: 288px;
+    height: 182px;
+    
+    margin-bottom: 14px;
+}
+
+.n-img-small-t {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 25px;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.025em;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* //새물품 오른쪽 */
+
+/* 조합원 추천 */
+.copartner {
+    position: relative;
+    display: block;
+    background: #fff8fa;
+}
+
+.copartner .container {
+    position: relative;
+    display: block;
+    height: 570px;
+    padding: 80px 0;
+
+    /* background-color: rgba(0, 0, 0, 0.2); */
+}
+
+.copartner-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-copartner-control {
+    position: absolute;
+    left: 0;
+    top: 180px;
+    display: block;
+}
+
+.sw-copartner-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-copartner-prev:hover {
+    background-position: 0px -20px;
+}
+
+.sw-copartner-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: -1.5px;
+    color: #bbb;
+}
+
+.sw-copartner-next {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-copartner-next:hover {
+    background-position: 0px -20px;
+}
+
+.copartner-left .swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.copartner-left .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.sale-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    height: 410px;
+    float: right;
+
+    overflow: hidden;
+}
+
+.copartner-left .section-title {
+    position: relative;
+    display: block;
+    padding-bottom: 24px;
+}    
+
+.copartner-left .section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 95px;
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #707070;
+}
+
+.copartner-left .section-title h2 {
+    position: relative;
+    display: block;
+
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: -0.8;
+}
+
+.copartner-left .section-title b {
+    position: relative;
+    display: block;
+    font-weight: 700;
+}
+    
+.copartner-left .section-title em {
+    color: #76bd42 !important;
+    font-weight: 700;
+}
+
+.copartner-left .section-desc {
+    position: relative;
+    display: block;
+    font-size: 17px;
+    line-height: 29px;
+    color: #333;
+    letter-spacing: -0.025em;
+}
+
+.copartner-left .section-desc::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 266px;
+    height: 2px;
+    background: #76bd42;
+}
+
+.copartner-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    height: 410px;
+    float: right;
+
+    overflow: hidden;
+}
+
+.copartner-right .good-link {
+    padding-bottom: 45px;
+    margin-left: 0 !important;
+    margin: 0 auto !important;
+}
+
+.copartner-right .good-link .good-info {
+    padding: 0 13px;
+}
+
+.copartner-right .good-cart {
+    right: 19px;
+    bottom: 45px;
+}
+
+.copartner-right .good-cate-txt {
+    margin-bottom: 7px !important;
+}
+
+/* 인기 상품 */
+.popular {
+    position: relative;
+    display: block;
+}
+
+.popular .container {
+    padding: 80px 0;
+}
+
+.popular-top {
+    position: relative;
+    display: block;
+    margin-bottom: 35px;
+}
+
+.popular-top .section-title {
+    padding-bottom: 0;
+}
+
+.popular-top .section-title::after {
+    content: none;
+}
+
+.popular-top .section-bt {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+
+    display: inline-block;
+    width: auto;
+    padding: 0 13px;
+
+}
+
+.popular-top .section-title b {
+    display: inline-block;
+}
+
+.popular-middle {
+    position: relative;
+    display: block;
+
+    margin-bottom: 40px;
+}
+
+.popular-slide {
+    position: relative;
+    display: block;
+    width: 1040px;
+    height: 140px;
+    margin: 0 auto;
+
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+}
+
+.popular-bt {
+    position: relative;
+    display: block;
+    width: 140px;
+    height: 140px;
+    float: left;
+
+    padding-top: 20px;
+    background-color: #f9f9f9;
+    /* hover 했을 때 그림이 움직이 않게 보더를 미리 넣기 */
+    border: 1px solid #f9f9f9;
+}
+
+.popular-bt-img {
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 64px;
+
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.popular-bt:hover {
+    background-color: #fff;
+    border: 1px solid #76bd42;
+}
+
+.popular-bt:hover .popular-bt-img {
+    background-position: 0px -64px;
+}
+
+/* 포커스 유지 */
+.popular-bt-focus {
+    background-color: #fff !important;
+    border: 1px solid #76bd42 !important;
+}
+
+.popular-bt-focus .popular-bt-img {
+    background-position: 0px -64px !important;
+}
+
+.popular-bt-txt {
+    position: relative;
+    display: block;
+
+    text-align: center;
+    font-size: 17px;
+    line-height: 25px;
+    letter-spacing: -0.425px;
+}
+
+.popular-bottom {
+    position: relative;
+    display: block;
+}
+
+/* 슬라이드 아이콘 */
+.icon-1 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_01.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-2 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_02.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-3 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_03.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-4 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_04.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-5 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_05.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-6 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_06.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-7 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_07.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-8 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_08.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-9 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_09.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-10 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_10.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-11 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_11.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-12 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_12.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-13 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_13.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.icon-14 {
+    position: relative;
+    display: block;
+
+    background: url('../images/p_icon_14.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+
+.popular-slide-prev {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 26px;
+    height: 20px;
+
+    background: url('../images/arrow_left.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.popular-slide-prev:hover {
+    background-position: 0px -20px;
+}
+
+.popular-slide-next {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    display: block;
+    width: 26px;
+    height: 20px;
+
+    background: url('../images/arrow_right.png') no-repeat;
+    background-position: 0px 0px;
+}
+
+.popular-slide-next:hover {
+    background-position: 0px -20px;
+}
+
+.popular-bottom {
+    position: relative;
+    display: block;
+}
+
+
+/* 브랜드관 */
+.brand {
+    position: relative;
+    display: block;
+    height: 445px;
+
+    background-color: #f3f9f0;
+}
+
+.brand .container {
+    padding: 80px 0;
+    overflow: hidden;
+}
+
+.brand-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.brand-left .section-bt {
+    color: #000;
+}
+
+.sw-brand-control {
+    position: absolute;
+    left: 0;
+    top: 260px;
+    display: block;
+}
+
+.sw-brand-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-brand-prev:hover {
+    background-position: 0px -20px;
+}
+
+.sw-brand-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: -1.5px;
+    color: #bbb;
+}
+
+.sw-brand-next {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-brand-next:hover {
+    background-position: 0px -20px;
+}
+
+.brand-left .swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.brand-left .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.brand-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    height: 410px;
+    float: right;
+}
+
+.brand-nature {
+    position: relative;
+    display: block;
+    width: 285px;
+    height: 285px;
+    padding: 35px 0;
+    float: left;
+
+    background-color: #fff;
+}
+
+.brand-nature a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.brand-nature-title img {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.brand-nature-title span {
+    position: relative;
+    display: block;
+    
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    line-height: -0.45px;
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.brand-nature-detail {
+    position: relative;
+    display: block;
+    text-align: center;
+    
+    margin-top: 34px;
+    padding-top: 6px;
+    overflow: hidden;
+}
+
+.brand-nature-detail li {
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+
+    border-right: 1px solid #e3e3e3;
+}
+
+.brand-nature-detail li:last-child {
+    border: 0;
+}
+
+.brand-nature-cate {
+    position: relative;
+    display: block;
+
+    font-size: 16px;
+    line-height: 24px;
+    color: #666;
+    letter-spacing: -0.4px;
+}
+
+.brand-nature-desc {
+    position: relative;
+    display: block;
+
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: -0.45px;
+}
+
+/* 띠배너 */
+.banner {
+    position: relative;
+    display: block;
+}
+
+.banner .container {
+    margin-top: 80px;
+}
+
+.banner-slide a {
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+}
+
+.banner-prev, .banner-next {
+    position: absolute;
+    top: 50%;
+    
+    display: block;
+    width: 19px;
+    height: 34px;
+
+    background: url('../images/bannerArr.png') no-repeat;
+    background-position: 0px -34px;
+    
+    z-index: 99;
+}
+
+.banner-prev {
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.banner-next {
+    right: 20px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.banner-prev:hover {
+    background-position: 0px 0px;
+}
+
+.banner-next:hover {
+    background-position: 0px 0px;
+}
+
+
+/* 제철요리 */
+.cook {
+    position: relative;
+    display: block;
+}
+
+.cook .container {
+    position: relative;
+    display: block;
+    padding-top: 85px;
+    padding-bottom: 80px;
+}
+
+.cook .section-title b {
+    display: inline-block;
+}
+
+.cook .section-title::after {
+    content: none;
+}
+
+.cook-main {
+    position: relative;
+    display: block;
+}
+
+.cook-left {
+    position: relative;
+    display: block;
+    width: 787px;
+    height: 420px;
+    float: left;
+}
+
+.cook-left a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.cook-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    width: 640px;
+    height: 155px;
+    
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.cook-title {
+    position: relative;
+    display: block;
+    width: 155px;
+    height: 100%;
+    float: left;
+
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 30px;
+    color: #fff;
+    letter-spacing: -0.625px;
+
+    background-color: #76bd42;
+
+    padding-left: 16px;
+    padding-top: 95px;
+}
+
+.cook-desc {
+    position: relative;
+    display: block;
+    width: calc(100% - 155px);
+    height: 100%;
+    float: left;
+
+    font-size: 25px;
+    line-height: 37px;
+    color: #333;
+    letter-spacing: -0.375px;
+
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+.cook-desc b {
+    position: relative;
+    display: block;
+    
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 45px;
+    color: #000;
+
+    margin-top: 2px;
+}
+
+.cook-right {
+    position: relative;
+    display: block;
+    width: 343px;
+    height: 420px;
+    float: right;
+}
+
+.cook-wrap {
+    position: relative;
+    
+    display: block;
+    width: 100%;
+    height: 270px;
+    
+    /* 목록을 가리기 위한 overflow:hidden */
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+}
+
+.cook-bt {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+
+    background: url('../images/inpCheck.png') no-repeat;
+    background-position: 0px -36px;
+
+    border: none;
+    cursor: pointer;
+
+    /* vertical-align: -2px; */
+    /* background-color: #bbb; */
+}
+
+.cook-list {
+    position: relative;
+    display: block;
+}
+
+.cook-list li {
+    position: relative;
+    display: block;
+
+    margin-bottom: 13px;
+}
+
+.cook-good {
+    position: relative;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.cook-good > img {
+    display: block;
+    width: 70px;
+    height: 70px;
+    float: left;
+    /* margin-left: -20px;
+    margin-right: 20px; */
+}
+
+.cook-good-info {
+    position: relative;
+    display: block;
+    float: right;
+    margin-left: 20px;
+}
+
+.cook-good-title {
+    position: relative;
+    display: block;
+
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.375px;
+
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.cook-good-price {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+}
+
+.cook-good-price b {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.cook-total {
+    position: relative;
+    display: block;
+    
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.375;
+
+    padding: 35px 0;
+}
+
+.cook-bt-all {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    padding-left: 40px;
+}
+
+.cook-link {
+    position: relative;
+    display: block;
+
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.5px;
+    text-align: center;
+
+    border: 1px solid #bbb;
+    background-color: #fff;
+    transition: background-color 0.3s;
+
+    padding: 20px 0; 
+}
+
+.cook-link:hover {
+    background-color: #f8f8f8;
+}
+
+#cook-price-total {
+    font-weight: 700;
+}
+
+/* 생생후기 */
+.review {
+    position: relative;
+    display: block;
+    background-color: #fcf6f2;
+}
+
+.review .container {
+    padding: 80px 0;
+    height: 395px;
+}
+
+.review-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.sw-review-control {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    display: block;
+}
+
+.sw-review-prev {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrP.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-review-prev:hover {
+    background-position: 0px -20px;
+}
+
+.sw-review-pg {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 20px;
+    float: left;
+
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: -1.5px;
+    color: #bbb;
+}
+
+.sw-review-next {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 20px;
+    float: left;
+
+    border: 0;
+    background: url('../images/swiperArrN.png') no-repeat;
+    background-position: 0px 0px;
+    cursor: pointer;
+}
+
+.sw-review-next:hover {
+    background-position: 0px -20px;
+} 
+
+.review-left .swiper-pagination-fraction {
+    bottom: 0 !important;
+}
+
+.review-left .swiper-pagination-current {
+    font-weight: 700;
+    color: #222;
+}
+
+.review-right {
+    position: relative;
+    display: block;
+    width: 896px;
+    float: right;
+
+    overflow: hidden;
+}
+
+.review-box {
+    position: relative;
+    display: block;
+    width: 288px;
+    height: 234px;
+
+    background-color: #fff;
+    padding: 30px 20px;
+
+    float: left;
+}
+
+.review-box-title {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.review-box-left {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.review-box-link {
+    position: relative;
+    display: block;
+    width: 165px;
+
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.425px;
+    line-height: 25px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.review-box-star {
+    position: relative;
+    display: block;
+
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.425px;
+
+    padding-left: 24px;
+    background: url('../images/icoRating.png') no-repeat;
+    background-position: left center;
+
+    margin-top: 5px;
+}
+
+.review-box-right {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.review-box-img {
+    width: 66px;
+    height: 66px;
+}
+
+.review-box-desc {
+    position: relative;
+    display: block;
+}
+
+.review-box-desc a {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.325px;
+
+    /* 3줄 줄임 dotdotdot.js 고려 */
+    overflow: hidden;
+    height: 60px;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    white-space: normal;
+
+    margin-top: 20px;
+}
+
+.review-box-id {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.325px;
+
+    margin-top: 20px; 
+}
+
+
+/* 고객지원 */
+.comm {
+    position: relative;
+    display: block;
+}
+
+.comm .container {
+    padding-top: 85px;
+    padding-bottom: 124px;
+}
+
+.comm-box {
+    position: relative;
+    display: block;
+    width: 400px;
+    height: 200px;
+    float: left;   
+    
+    border-right: 1px solid #e5e5e5;
+    padding-bottom: 5px;
+    padding-left: 40px;
+}
+
+.comm-box:first-child {
+    padding-left: 0;
+}
+
+.comm-box:last-child {
+    border-right: 0;
+}
+
+.comm-box h2 {
+    position: relative;
+    display: block;
+    
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.5px;
+}
+
+.comm-info {
+    position: relative;
+    display: block;
+}
+
+.comm-info b {
+    position: relative;
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: #76bd42;
+    letter-spacing: 0;
+
+    margin-top: 20px;
+}
+
+.comm-info ul {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+
+    margin-top: 10px;
+}
+
+.comm-info li {
+    position: relative;
+    display: block;
+
+    margin-bottom: 7px;
+}
+
+.comm-info em {
+    font-size: 13px;
+    line-height: 19px;
+    color: #666;
+    letter-spacing: 0;
+    font-weight: 400;
+
+    margin-right: 5px;
+}
+
+.comm-info span {
+    font-weight: 400;
+}
+
+.comm-info a {
+    font-weight: 700;
+}
+
+.comm-box:first-child {
+    padding-left: 0;
+}
+
+/* Tab 메뉴 만들 때는 높이 주기 */
+.notice-wrap {
+    position: relative;
+    display: block;
+    height: 120px;
+    padding-right: 25px;
+}
+
+.notice-menu {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    margin-bottom: 20px;
+}
+
+.notice-menu button {
+    position: relative;
+    display: block;
+    float: left;
+    
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: -0.5px;
+    color: #000;
+    
+    border: none;
+    background-color: #fff;
+
+    margin: 0 10px;
+    color: #999;
+    cursor: pointer;
+}
+
+.bar {
+    position: relative;
+    display: block;
+    width: 1px;
+    height: 18px;
+    float: left;
+    background: #e5e5e5;
+
+    margin-top: 5px;
+}
+
+.notice-menu-focus {
+    color: #000 !important; 
+}
+
+.notice-list, .news-list { 
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.notice-list-focus {
+    display: block !important;
+}
+
+.notice-list li, .news-list li { 
+    position: relative;
+    display: block;
+    overflow: hidden;
+    
+    margin-bottom: 10px;
+}
+
+.notice-list a, .news-list a {
+    position: relative;
+    display: block;
+    width: 260px;
+
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.325px;
+
+    float: left;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.notice-date {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 19px;
+    letter-spacing: -0.325px;
+    color: #999;
+
+    float: right;
+}
+
+.faq-link {
+    position: relative;
+    display: block;
+    margin-top: 15px;
+}
+
+.faq-link a {
+    position: relative;
+    display: block;
+    width: 155px;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: -0.325px;
+    color: #333;
+    border: 1px solid #e5e5e5;
+
+    float: left;
+
+    margin-bottom: 10px;
+
+    padding: 0 10px;
+
+}
+
+
+.faq-link a::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 8px;
+    height: 10px;
+    background: url('../images/icoFaq.png') no-repeat;
+    background-position: right center;
+}
+
+.faq-link a:nth-child(2n-1) {
+    margin-right: 10px;
+}
+
+/* 하단 영역 */
+.footer {
+    position: relative;
+    display: block;
+}
+
+.footer-top {
+    position: relative;
+    display: block;
+    height: 56px;
+    border-top: 1px solid #f2f2f2;
+    background-color: #fff;
+}
+
+.footer-top .container {
+    height: 100%;
+    line-height: 56px;
+}
+
+.footer-nav {
+    position: relative;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+.footer-nav li {
+    position: relative;
+    display: block;
+    float: left;
+
+    padding: 0 10px;
+}
+
+.footer-nav li:first-child {
+    padding-left: 0;
+}
+
+.footer-nav li:last-child {
+    padding-right: 0;
+}
+
+.footer-nav li::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    width: 2px;
+    height: 2px;
+
+    background-color: #a9b0b8;
+}
+
+.footer-nav li:last-child:after {
+    content: none;
+}
+
+.footer-nav li a {
+    font-size: 13px;
+    line-height: 19px;
+    color: #000;
+    text-decoration: none;
+    letter-spacing: -0.325px;
+}
+
+.footer-site {
+    position: relative;
+    display: block;
+    float: right;
+}
+
+.footer-site a {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 55px;
+    letter-spacing: -0.325px;
+    color: #666;
+
+    overflow: hidden;
+}
+
+.footer-site a span {
+    position: relative;
+    display: block;
+}
+
+.footer-site a span:first-child {
+    float: left;
+    margin-right: 30px;
+}
+
+.footer-site a span:last-child {
+    float: right;
+    padding-left: 15px;
+}
+
+.footer-site a span:last-child i {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url('../images/btnMore.png') no-repeat;    
+    vertical-align: -2px;
+    margin-left: 5px;
+}
+
+.footer-bottom {
+    position: relative;
+    display: block;
+    height: calc(239px - 56px);
+    border-top: 1px solid #f2f2f2;
+    background-color: #fff;
+}
+
+.footer-bottom .container {
+    padding-top: 25px;
+    padding-bottom: 63px;
+}
+
+.site-info { 
+    position: relative;
+    display: block;
+}
+
+.site-info li {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 22px;
+    color: #666;
+    letter-spacing: -0.325px;
+}
+
+.site-info a {
+    font-weight: 500;
+    color: #000;
+}
+
+.footer-bottom p {
+    position: relative;
+    display: block;
+
+    margin-top: 20px;
+    font-size: 11px;
+    line-height: 16px;
+    color: #999;
+}
+
+.f-mail {
+    font-weight: 400 !important;
+}
+
+.f-bar {
+    position: relative;
+    display: inline-block;
+}
+
+.f-bar::before {
+    content: '';
+    position: relative;  
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #e5e5e5;
+    margin: 0 7px;
+}
+
+.sns-list {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    display: block;
+}
+
+.sns-list li {
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 12px;
+}
+
+.sns-list a {
+    position: relative;
+    display: block;
+    width: 26px;
+    height: 26px;
+
+    background: url('../images/ftSns.png') no-repeat;
+}
+
+.sns-list .sns-insta {
+    background-position: 0px -26px;
+}
+
+.sns-list .sns-face {
+    background-position: 0px 0px;
+}
+
+.sns-list .sns-blog {
+    background-position: 0px -52px;
+}
+
+.sns-list .sns-youtube {
+    background-position: 0px -78px;
+}
+
+.sns-list .sns-kakao {
+    background-position: 0px -104px;
+}
+
+.sitemap {
+    position: absolute;
+    left: 0;
+    bottom: -100px;
+    display: none;
+    width: 100%;
+
+    background-color: #f4f4f4;
+}
+
+.sitemap .container {
+    position: relative;
+    display: block;
+    padding: 45px 0;
+}
+
+.family-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.family-list li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 20%;
+}
+
+.family-list dl {
+    position: relative;
+    display: block;
+}
+
+.family-list dl dt {
+    position: relative;
+    display: block;
+
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.375px;
+    color: #76bd42;
+
+    margin-bottom: 20px;
+}
+
+.family-list dl dd {
+    position: relative;
+    display: block;
+
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -0.375px;
+    color: #000;
+}
+
+.family-list dl dd a {
+    position: relative;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 22px;
+    letter-spacing: -0.375px;
+    color: #000;
+}
+
+.family-close {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url('../images/btnFamilyClose.png') no-repeat center;
+    border: 0;
+    cursor: pointer;
+}
