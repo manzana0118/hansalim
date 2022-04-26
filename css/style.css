@@ -1028,7 +1028,7 @@ body {
     /* margin-top: 131px; */
 }
 
-.swiper-continer {
+.swiper-container {
     width: 100%;
     height: 100%;
 }
@@ -1198,29 +1198,19 @@ body {
 
 .good-wrap {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: block;
+    margin-bottom: 70px;
 }
 
 .good-link {
     position: relative;
     display: block;
     width: 288px;
-    height: 370px;
+    /* height: 370px; */
     float: left;
-    margin: 0 8px;
+    margin-left: 16px;
 
     background-color: #fff;
-    margin-bottom: 70px;
-}
-
-.good-link:first-child {
-    margin-left: 0;
-}
-
-.good-link:last-child {
-    margin-right: 0;
 }
 
 .good-img {
@@ -1231,23 +1221,23 @@ body {
     overflow: hidden;
 }
 
-.good-img > img {
+.good-img img {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 100%;
     transform: translate(-50%, -50%) scale(1.0);
+    width: 100%;
     transition: transform 0.5s;
 }
 
-.good-img:hover > img {
+.good-img:hover img {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
 .good-info {
     position: relative;
     display: block;
-    margin-top: 13px;
+    margin-top: 14px;
 }
 
 .good-cate {
@@ -1259,18 +1249,16 @@ body {
 .good-cate-txt {
     position: relative;
     display: block;
-    float: left;
 
+    float: left;
     font-size: 11px;
     font-weight: 500;
-    line-height: 17px;
+    line-height: 16px;
     color: #888;
-    
     border: 1px solid #e5e5e5;
     background: #fff;
     padding: 0 7px;
-    white-space: nowrap;
-
+    margin-right: 5px;
     margin-bottom: 13px;
 }
 
@@ -1278,20 +1266,19 @@ body {
 .good-title {
     position: relative;
     display: block;
+
     height: 44px;
-    
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.025em;
-    color: #000;
     overflow: hidden;
-    
-    text-decoration: none;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     word-wrap: break-word;
+
+    font-size: 17px;
+    line-height: 22px;
+
+    /* margin-bottom: 13px; */
 }
 
 .good-price {
@@ -1303,7 +1290,8 @@ body {
     letter-spacing: 0;
 
 }
-.good-price b {   
+
+.good-price b {
     font-weight: 500;
     font-size: 22px;
     line-height: 27px;
@@ -1313,55 +1301,38 @@ body {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 5;
-    background: #76bd42;
+
     display: block;
     width: 50px;
     height: 50px;
 
     text-align: center;
+    line-height: 50px;
+    background-color: #76bd42;
+    color: #fff;
     font-size: 14px;
     font-weight: 500;
-    line-height: 50px;
-    color: #fff;
-}
-
-.good-tag-red {
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 5;
-    background: #e14949;
-    display: block;
-    width: 50px;
-    height: 50px;
-
-    text-align: center;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 50px;
-    color: #fff;
+    letter-spacing: -0.375px;
 }
 
 .good-cart {
     position: absolute;
     right: 20px;
     bottom: 0;
-    
     display: block;
     width: 30px;
     height: 30px;
-    
+
+    border: none;
     background: url('../images/btnCartList.png') no-repeat;
     background-position: 0px 0px;
-    border: none;
-
     cursor: pointer;
 }
 
 .good-cart:hover {
     background-position: 0px -30px;
 }
+
 
 
 /* 알뜰 물품 */
