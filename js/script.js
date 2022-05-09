@@ -209,18 +209,19 @@ $(document).ready(function () {
     });
 
     // 사이트맵
-    let sitemap_bt = $('.f-site-link span');
+    let sitemap_bt = $('.f-site-link');
     let sitemap = $('.sitemap');
     let sitemap_close = $('.family-close');
 
     sitemap_bt.click(function(event){
         event.preventDefault();
-        sitemap.removeClass('sitemap-active');
-        sitemap.addClass('sitemap-active');
+        sitemap.toggleClass('sitemap-active');
+        sitemap_bt.toggleClass('f-site-link-active');
     });
 
     sitemap_close.click(function(event){
         sitemap.removeClass('sitemap-active');
+        sitemap_bt.removeClass('f-site-link-active');
     });
 });
 

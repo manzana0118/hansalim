@@ -280,7 +280,7 @@ body {
 /* 고정메뉴 */
 .fixmenu {
     position: fixed;
-    left: calc(50% + 650px);
+    left: calc(60% + 650px);
     top: 175px;
 
     display: block;
@@ -3111,6 +3111,7 @@ body {
     color: #666;
 
     overflow: hidden;
+    padding-left: 30px;
 }
 
 .footer-site a span {
@@ -3125,7 +3126,7 @@ body {
 
 .footer-site a span:last-child {
     float: right;
-    padding-left: 15px;
+    padding-left: 30px;
 }
 
 .footer-site a span:last-child i {
@@ -3136,6 +3137,10 @@ body {
     background: url('../images/btnMore.png') no-repeat;
     vertical-align: -2px;
     margin-left: 5px;
+}
+
+.f-site-link-active{
+    background-color: #f4f4f4;
 }
 
 .footer-bottom {
@@ -3246,7 +3251,7 @@ body {
 .sitemap {
     position: absolute;
     left: 0;
-    bottom: 240px;
+    bottom: 238px;
     display: none;
     width: 100%;
     z-index: 98;
