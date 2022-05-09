@@ -294,9 +294,11 @@ window.onload = function () {
     // 타이틀 데이터 
     let data_title = [];
 
+    let popular_data = 'data.json'
+
     // HTTP Request: 서버에 자료를 요청하는 것
     // HTTP Response: 서버에서 응답 오는 것
-    fetch('./data.json')
+    fetch(popular_data)
         .then(res => res.json())
         .then(result => {
             for (let i = 0; i < result.length; i++) {
