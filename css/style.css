@@ -28,7 +28,7 @@ html {
 }
 
 body {
-    font-family: 'Roboto', 'Noto Sans KR','Malgun Gothinc', sans-serif;
+    font-family: 'Roboto', 'Noto Sans KR', 'Malgun Gothinc', sans-serif;
     font-weight: 400;
     font-size: 15px;
     line-height: 24px;
@@ -104,7 +104,7 @@ body {
     display: block;
     width: 112px;
     height: 32px;
-    
+
     font-size: 13px;
     color: #666;
     line-height: 32px;
@@ -128,6 +128,62 @@ body {
 
 .no-mb {
     margin-bottom: 0 !important;
+}
+
+/* 비주얼 모달창 */
+.visual-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    overflow-y: scroll;
+}
+
+.visual-modal-box {
+    position: absolute;
+    left: 50%;
+    top: 50px;
+    transform: translateX(-50%);
+    display: block;
+    width: 1300px;
+    height: 1200px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.visual-modal-box li {
+    position: relative;
+    display: block;
+    width: 50%;
+    float: left;
+    overflow: hidden;
+}
+
+.visual-modal-box a {
+    position: relative;
+    display: block;
+    width: 1050px;
+    height: 225px;
+}
+
+.visual-modal-box a img {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    transform: translateX(-50%);
+    height: 100%;
+}
+
+.visual-modal-close {
+    position: absolute;
+    left: calc(50% + 650px);
+    top: 50px;
+    display: block;
+    cursor: pointer;
 }
 
 /* 모달창 */
@@ -195,7 +251,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 10px;
+    bottom: 20px;
     display: block;
     width: 150px;
     height: 30px;
@@ -248,6 +304,7 @@ body {
     position: relative;
     display: block;
 }
+
 .fixmenu-list li {
     position: relative;
     display: block;
@@ -261,6 +318,7 @@ body {
     line-height: 19px;
     letter-spacing: -0.325px;
 }
+
 .fixmenu-list i {
     position: relative;
     display: block;
@@ -274,12 +332,15 @@ body {
 .fixmenu-list .fixicon-1 {
     background-position: 0px 0px;
 }
+
 .fixmenu-list .fixicon-2 {
     background-position: 0px -32px;
 }
+
 .fixmenu-list .fixicon-3 {
     background-position: 0px -64px;
 }
+
 .fixmenu-list .fixicon-4 {
     background-position: 0px -96px;
 }
@@ -300,7 +361,7 @@ body {
     display: block;
     width: 100%;
     height: 30px;
-    
+
     text-align: center;
     line-height: 30px;
     color: #fff;
@@ -308,9 +369,8 @@ body {
     font-size: 11px;
     border: 0;
     border-radius: 0 0 20px 20px;
-    cursor: pointer;
-    
     background-color: #000;
+    cursor: pointer;
 }
 
 
@@ -322,7 +382,7 @@ body {
 
     z-index: 999;
 
-    background-color: #fff; 
+    background-color: #fff;
 }
 
 .header-top {
@@ -387,22 +447,22 @@ body {
     display: block;
 }
 
-.mymenu > li {
+.mymenu>li {
     position: relative;
     display: block;
     float: left;
     padding: 0 11px;
 }
 
-.mymenu > li:first-child {
+.mymenu>li:first-child {
     padding-left: 0;
 }
 
-.mymenu > li:last-child {
+.mymenu>li:last-child {
     padding-right: 0;
 }
 
-.mymenu > li::before {
+.mymenu>li::before {
     position: absolute;
     right: 0;
     top: 50%;
@@ -415,11 +475,11 @@ body {
     background-color: #bbbbbb;
 }
 
-.mymenu > li:last-child::before {
+.mymenu>li:last-child::before {
     content: none;
 }
 
-.mymenu > li a {
+.mymenu>li a {
     font-size: 13px;
     line-height: 13px;
     color: #666;
@@ -463,7 +523,7 @@ body {
     position: relative;
     display: block;
     float: left;
-    
+
     padding-top: 18px;
     /* padding-bottom: 15px; */
 }
@@ -734,7 +794,7 @@ body {
     position: relative;
     display: block;
     float: left;
-    
+
     font-size: 17px;
     font-weight: 500;
     line-height: 28px;
@@ -756,7 +816,7 @@ body {
     padding-left: 13px;
 }
 
-.gnb > li {
+.gnb>li {
     position: relative;
     display: block;
     float: left;
@@ -764,7 +824,7 @@ body {
     padding: 0px 15px;
 }
 
-.gnb > li > a {
+.gnb>li>a {
     font-size: 17px;
     font-weight: 500;
     line-height: 28px;
@@ -772,19 +832,19 @@ body {
     color: #000;
 }
 
-.gnb > li > a:hover {
+.gnb>li>a:hover {
     color: #76bd42;
 }
 
-.gnb > li:first-child  {
+.gnb>li:first-child {
     margin-left: 0px;
 }
 
-.gnb > li:last-child  {
+.gnb>li:last-child {
     margin-right: 0px;
 }
 
-.gnb > li:nth-child(5)::after {
+.gnb>li:nth-child(5)::after {
     content: '';
     position: absolute;
     top: 5px;
@@ -796,7 +856,7 @@ body {
     border-radius: 50%;
 }
 
-.gnb > li:nth-child(6)::after {
+.gnb>li:nth-child(6)::after {
     content: '';
     position: absolute;
     top: 5px;
@@ -883,7 +943,7 @@ body {
     z-index: 9999 !important;
     top: 26px !important;
 
-    padding: 10px 20px 20px 20px !important; 
+    padding: 10px 20px 20px 20px !important;
 }
 
 .arrow-list-login a {
@@ -915,11 +975,11 @@ body {
     margin-left: 3px;
 }
 
-.arrow-list-more-active{
+.arrow-list-more-active {
     color: #76bd42 !important;
 }
 
-.arrow-list-more-active i{
+.arrow-list-more-active i {
     background-position: 0px -7px !important;
 }
 
@@ -947,15 +1007,15 @@ body {
     top: 9px;
     display: block;
     line-height: 42px;
-    border: 1px solid #f7f7f7;   
+    border: 1px solid #f7f7f7;
     width: 100%;
 
-    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', sans-serif;    
+    font-family: 'Roboto', 'Noto Sans KR', '맑은고딕', sans-serif;
     font-size: 13px;
     color: #000;
     font-weight: 400;
 
-    
+
     background-color: #f7f7f7;
     border-radius: 21px;
     padding: 0 20px;
@@ -967,7 +1027,7 @@ body {
 }
 
 .good-name:focus {
-    border:1px solid #76bd42;
+    border: 1px solid #76bd42;
     background: #fff;
 }
 
@@ -1000,15 +1060,37 @@ body {
     top: -5px;
     display: block;
     padding: 4px 5px 3px 5px;
-    
+
     font-size: 11px;
     font-weight: 700;
     line-height: 1;
     text-align: center;
     color: #fff;
-    
+
     border-radius: 9px;
     background: #76bd42;
+}
+
+.updown-ani {
+    animation-name: bucket-ani;
+    animation-duration: 0.5s;
+    animation-delay: 0;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 5;
+}
+
+@keyframes bucket-ani {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 
@@ -1044,7 +1126,7 @@ body {
     left: calc(50% - 580px);
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
     display: block;
     width: 64px;
     height: 64px;
@@ -1081,7 +1163,7 @@ body {
     right: calc(50% - 580px);
     top: 50%;
     transform: translate(-50%, -50%);
-    
+
     display: block;
     width: 64px;
     height: 64px;
@@ -1183,7 +1265,7 @@ body {
     display: block;
 }
 
-.recommend .container{
+.recommend .container {
     padding: 85px 0px;
 }
 
@@ -1409,7 +1491,7 @@ body {
 
 .sw-sale-next:hover {
     background-position: 0px -20px;
-} 
+}
 
 .sale-left .swiper-pagination-fraction {
     bottom: 0 !important;
@@ -1468,7 +1550,7 @@ body {
     color: #000;
 }
 
-.new-title h2 > b {
+.new-title h2>b {
     font-weight: 700;
 }
 
@@ -1535,6 +1617,7 @@ body {
 .new-img-big p {
     margin-top: 3px;
 }
+
 /* //새물품 왼쪽 */
 
 /* 새물품 오른쪽 */
@@ -1560,7 +1643,7 @@ body {
     display: block;
     width: 288px;
     height: 182px;
-    
+
     margin-bottom: 14px;
 }
 
@@ -1578,6 +1661,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
 }
+
 /* //새물품 오른쪽 */
 
 /* 조합원 추천 */
@@ -1679,7 +1763,7 @@ body {
     position: relative;
     display: block;
     padding-bottom: 24px;
-}    
+}
 
 .copartner-left .section-title::after {
     content: '';
@@ -1707,7 +1791,7 @@ body {
     display: block;
     font-weight: 700;
 }
-    
+
 .copartner-left .section-title em {
     color: #76bd42 !important;
     font-weight: 700;
@@ -2157,7 +2241,7 @@ body {
 .brand-nature-title span {
     position: relative;
     display: block;
-    
+
     font-size: 18px;
     font-weight: 500;
     line-height: 27px;
@@ -2171,7 +2255,7 @@ body {
     position: relative;
     display: block;
     text-align: center;
-    
+
     margin-top: 34px;
     padding-top: 6px;
     overflow: hidden;
@@ -2228,17 +2312,18 @@ body {
     float: left;
 }
 
-.banner-prev, .banner-next {
+.banner-prev,
+.banner-next {
     position: absolute;
     top: 50%;
-    
+
     display: block;
     width: 19px;
     height: 34px;
 
     background: url('../images/bannerArr.png') no-repeat;
     background-position: 0px -34px;
-    
+
     z-index: 99;
 }
 
@@ -2309,7 +2394,7 @@ body {
     display: block;
     width: 640px;
     height: 155px;
-    
+
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -2351,7 +2436,7 @@ body {
 .cook-desc b {
     position: relative;
     display: block;
-    
+
     font-size: 30px;
     font-weight: 700;
     line-height: 45px;
@@ -2370,11 +2455,11 @@ body {
 
 .cook-wrap {
     position: relative;
-    
+
     display: block;
     width: 100%;
     height: 270px;
-    
+
     /* 목록을 가리기 위한 overflow:hidden */
     overflow: hidden;
     border-bottom: 1px solid #eee;
@@ -2394,9 +2479,12 @@ body {
 
     border: none;
     cursor: pointer;
+    z-index: 9;
+}
 
-    /* vertical-align: -2px; */
-    /* background-color: #bbb; */
+.cook-bt-false {
+    background-position: 0px 0px !important;
+    z-index: 9;
 }
 
 .cook-list {
@@ -2417,7 +2505,7 @@ body {
     margin-left: 40px;
 }
 
-.cook-good > img {
+.cook-good>img {
     display: block;
     width: 70px;
     height: 70px;
@@ -2463,7 +2551,7 @@ body {
 .cook-total {
     position: relative;
     display: block;
-    
+
     font-size: 20px;
     line-height: 29px;
     letter-spacing: -0.375;
@@ -2492,7 +2580,7 @@ body {
     background-color: #fff;
     transition: background-color 0.3s;
 
-    padding: 20px 0; 
+    padding: 20px 0;
 }
 
 .cook-link:hover {
@@ -2573,7 +2661,7 @@ body {
 
 .sw-review-next:hover {
     background-position: 0px -20px;
-} 
+}
 
 .review-left .swiper-pagination-fraction {
     bottom: 0 !important;
@@ -2693,7 +2781,7 @@ body {
     line-height: 18px;
     letter-spacing: -0.325px;
 
-    margin-top: 20px; 
+    margin-top: 20px;
 }
 
 
@@ -2713,8 +2801,8 @@ body {
     display: block;
     width: 400px;
     height: 200px;
-    float: left;   
-    
+    float: left;
+
     border-right: 1px solid #e5e5e5;
     padding-bottom: 5px;
     padding-left: 40px;
@@ -2731,7 +2819,7 @@ body {
 .comm-box h2 {
     position: relative;
     display: block;
-    
+
     font-size: 20px;
     font-weight: 700;
     line-height: 29px;
@@ -2815,13 +2903,13 @@ body {
     position: relative;
     display: block;
     float: left;
-    
+
     font-size: 20px;
     font-weight: 700;
     line-height: 29px;
     letter-spacing: -0.5px;
     color: #000;
-    
+
     border: none;
     background-color: #fff;
 
@@ -2842,10 +2930,11 @@ body {
 }
 
 .notice-menu-focus {
-    color: #000 !important; 
+    color: #000 !important;
 }
 
-.notice-list, .news-list { 
+.notice-list,
+.news-list {
     position: absolute;
     left: 0;
     top: 0;
@@ -2856,15 +2945,17 @@ body {
     display: block !important;
 }
 
-.notice-list li, .news-list li { 
+.notice-list li,
+.news-list li {
     position: relative;
     display: block;
     overflow: hidden;
-    
+
     margin-bottom: 10px;
 }
 
-.notice-list a, .news-list a {
+.notice-list a,
+.news-list a {
     position: relative;
     display: block;
     width: 260px;
@@ -3042,7 +3133,7 @@ body {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background: url('../images/btnMore.png') no-repeat;    
+    background: url('../images/btnMore.png') no-repeat;
     vertical-align: -2px;
     margin-left: 5px;
 }
@@ -3060,7 +3151,7 @@ body {
     padding-bottom: 63px;
 }
 
-.site-info { 
+.site-info {
     position: relative;
     display: block;
 }
@@ -3101,7 +3192,7 @@ body {
 
 .f-bar::before {
     content: '';
-    position: relative;  
+    position: relative;
     display: inline-block;
     width: 1px;
     height: 10px;
@@ -3155,11 +3246,16 @@ body {
 .sitemap {
     position: absolute;
     left: 0;
-    bottom: -100px;
+    bottom: 240px;
     display: none;
     width: 100%;
+    z-index: 98;
 
     background-color: #f4f4f4;
+}
+
+.sitemap-active {
+    display: block;
 }
 
 .sitemap .container {

@@ -1,0 +1,41 @@
+[{
+    "cook_id": "1",
+    "cook_pic": "cook_01.jpg",
+    "cook_name": "월앙매실",
+    "cook_info": "(선물용/1L)",
+    "cook_price": "29000",
+    "cook_link": "#"
+
+},
+{
+    "cook_id": "2",
+    "cook_pic": "cook_02.jpg",
+    "cook_name": "깻잎",
+    "cook_info": "(30장)",
+    "cook_price": "1250",
+    "cook_link": "#"
+},
+{
+    "cook_id": "3",
+    "cook_pic": "cook_03.jpg",
+    "cook_name": "유기농현미식초",
+    "cook_info": "",
+    "cook_price": "3700",
+    "cook_link": "#"
+},
+{
+    "cook_id": "4",
+    "cook_pic": "cook_04.jpg",
+    "cook_name": "배",
+    "cook_info": "(대:3개)",
+    "cook_price": "10200",
+    "cook_link": "#"
+},
+{
+    "cook_id": "5",
+    "cook_pic": "cook_05.jpg",
+    "cook_name": "고춧가루",
+    "cook_info": "(400g/청양)",
+    "cook_price": "21500",
+    "cook_link": "#"
+}]
